@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 
 const userRouter = require("./users/userRouter.js");
+const postRouter = require("./posts/postRouter.js");
 const gate = require("./auth/gate-middleware.js");
 
 const server = express();
@@ -22,6 +23,7 @@ server.use(helmet());
 server.use(express.json());
 
 server.use("/api/users", gate, userRouter);
+server.use("/api/posts", gate, postRouter);
 
 server.use(errorHandler);
 
