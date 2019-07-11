@@ -27,7 +27,7 @@ router.post("/:id/posts", validateUserId, validatePost, async (req, res) => {
 		// log error to database
 		console.log(error);
 		res.status(500).json({
-			error: "There was an error while adding the user to the database"
+			error: "There was an error while adding the post to the database"
 		});
 	}
 });
